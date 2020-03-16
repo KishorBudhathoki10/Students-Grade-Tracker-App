@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @grade.name %></h2>
+
+<ol>
+  <% @sections.each do |section| %>
+    <li><%= section.name %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'Edit', edit_grade_path(@grade) %> |
+<%= link_to 'Back', grades_path %>
