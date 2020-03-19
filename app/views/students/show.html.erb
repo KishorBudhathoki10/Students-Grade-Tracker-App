@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', "/grades/#{@grade_id}/sections/#{@id}" %>
 
 <p>
   <strong>Name:</strong>
@@ -10,5 +10,25 @@
   <%= @student.age %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<p>
+  <strong>Family History:</strong>
+  <%= @student.family_history %>
+</p>
+
+<p>
+  <strong>Strengths:</strong>
+  <%= @student.strengths %>
+</p>
+
+<p>
+  <strong>Weaknesses:</strong>
+  <%= @student.weaknesses %>
+</p>
+
+<p>
+  <strong>Disabilities:</strong>
+  <%= @student.disabilities %>
+</p>
+
+<%= link_to 'Edit', "/grades/#{@grade_id}/sections/#{@id}/students/#{@student_id}/edit" %> |
+<%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,6 +1,7 @@
-<h1>Editing Grade</h1>
+<%= render "navbar.html" %>
 
-<%= render 'form', grade: @grade %>
+<div class="grade-form">
+  <h1>Editing Grade</h1>
 
-<%= link_to 'Show', @grade %> |
-<%= link_to 'Back', grades_path %>
+  <%= render 'form', grade: @grade %>
+</div>

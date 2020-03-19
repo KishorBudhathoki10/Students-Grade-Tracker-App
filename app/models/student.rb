@@ -1,7 +1,6 @@
 class Student < ApplicationRecord
 
   belongs_to :section
-  belongs_to :grade
 
   validates_presence_of :name,
                         :age,

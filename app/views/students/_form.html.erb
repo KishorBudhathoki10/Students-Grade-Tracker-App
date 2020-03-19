@@ -41,6 +41,14 @@
     <%= f.text_area :disabilities %>
   </div>
 
+  <div class="field">
+    <%= f.hidden_field :section_id, value: @section_id %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :grade_id, value: @grade_id %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

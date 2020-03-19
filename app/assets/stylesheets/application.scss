@@ -1,0 +1,75 @@
+@import "bootstrap";
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 20px;
+	box-sizing: border-box;
+}
+
+/* #726767 */
+
+header {
+	text-align: center;
+	padding: 30px 0;
+	background-color: #1c536b;
+	color: white;
+}
+
+.grades {
+	padding: 30px 0;
+	background-color: #1c536b;
+	text-align: center;
+	color: white;
+}
+
+
+h1 {
+	font-size: 3rem;
+}
+
+.main {
+	background-color: #1edbed;
+	margin: 10px;
+	padding: 20px;
+}
+
+.main .card {
+	display: inline-block;
+	text-align: center;
+	width: 22%;
+	margin: 1.5%;
+}
+
+
+.main a {
+	color: grey;
+}
+
+.btn {
+	margin: 10px;
+	color: white;
+}
+
+.grade-form {
+	background-color: #5dd9dd;
+	padding: 20px;
+	border-style: solid;
+	border-color: grey;
+	width: 70%;
+	margin: 80px auto;
+
+}
+
+.grade-form h2 {
+	text-align: center;
+	font-size: 2.5rem;
+	padding-bottom: 40px;
+}
+
+.form-actions {
+	margin-right: 20px;
+}
