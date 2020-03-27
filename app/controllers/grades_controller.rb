@@ -24,7 +24,6 @@ class GradesController < ApplicationController
         format.html { redirect_to grades_path, notice: 'Grade was successfully created.' }
       else
         format.html { render :new }
-        
       end
     end
   end
@@ -45,6 +44,24 @@ class GradesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to grades_url, notice: 'Grade was successfully destroyed.' }
     end
+  end
+
+  def activities
+    @grade = Grade.find(params[:grade_id])
+    @speakings = @grade.speakings.newest_first
+    @writings = @grade.writings.newest_first
+    @listenings = @grade.listenings.newest_first
+    @readings = @grade.readings.newest_first
+    @sections = @grade.sections.alphabetically
+    puts "*" * 40
+    p @sections
+    puts "*" * 40
+  end
+
+  def speakings
+    @grade = Grade.find(params[:grade_id])
+    @speakings = @grade.speakings.newest_first
+    @sections = @grade.sections.alphabetically
   end
 
   private

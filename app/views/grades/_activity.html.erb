@@ -1,0 +1,41 @@
+<%= link_to "Create New Activity", path, class: "btn btn-warning fifty-pixel-margin-bottom" %>
+
+<% if !activities.empty? %>
+
+  <% sections.each do |section| %>
+  
+    <h3><%= section.name %></h3>
+    <table>
+      <tr>
+        <th>Activities</th>
+        <% section.students.alphabetically.each do |student| %>
+          <th><%= student.name.slice(0..9) %></th>
+        <% end %>
+      </tr>
+
+
+      <% activities.each do |activity| %>
+        <tr>
+          <td>
+            <%= form_for(activity) do |f| %>
+              <%= f.text_field :title %>
+            <% end %>
+          </td>
+            <% section.students.alphabetically.each do |student| %>
+              <td>
+                <% activity_enrollment = model.where(student_id: student.id, id => activity.id).first %>
+                  <%= form_for activity_enrollment, url: url, remote: true do |f| %>
+                    <%= f.text_field :marks, class: "marks" %>
+                    <%= f.hidden_field :id %>
+                  <% end %>
+                </td>
+            <% end %>
+        </tr>
+      <% end %>
+
+    </table>
+    <br>
+
+  <% end %>
+
+<% end %>

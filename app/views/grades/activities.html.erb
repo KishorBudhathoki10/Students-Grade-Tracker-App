@@ -1,0 +1,53 @@
+<%= render "navbar" %>
+
+<% array_of_classes = find_active_activity(params) %>
+
+<%= link_to "Back", grade_path(@grade), class: "btn btn-info btn-sm fifty-pixel-margin-bottom" %><br>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link <%= array_of_classes[0][0] %>" id="speaking-tab" data-toggle="tab" href="#speaking" role="tab" aria-controls="speaking" aria-selected="true">Speaking</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link <%= array_of_classes[0][1] %>" id="writing-tab" data-toggle="tab" href="#writing" role="tab" aria-controls="writing" aria-selected="false">Writing</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link <%= array_of_classes[0][2] %>" id="listening-tab" data-toggle="tab" href="#listening" role="tab" aria-controls="listening" aria-selected="false">Listening</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link <%= array_of_classes[0][3] %>" id="reading-tab" data-toggle="tab" href="#reading" role="tab" aria-controls="reading" aria-selected="false">Reading</a>
+  </li>
+</ul>
+
+
+<div class="tab-content" id="myTabContent">
+
+  <div class="tab-pane fade activity-content <%= array_of_classes[1][0] %>" id="speaking" role="tabpanel" aria-labelledby="speaking-tab">
+
+    <%= render partial: "activity", locals: { path: new_speaking_path, sections: @sections, activities: @speakings, model: SpeakingEnrollment, id: :speaking_id, url: update_speaking_enrollments_path } %>
+
+  </div>
+
+
+  <div class="tab-pane fade activity-content <%= array_of_classes[1][1] %>" id="writing" role="tabpanel" aria-labelledby="writing-tab">
+
+    <%= render partial: "activity", locals: { path: new_writing_path, sections: @sections, activities: @writings, model: WritingEnrollment, id: :writing_id, url: update_writing_enrollments_path } %>
+
+  </div>
+
+  <div class="tab-pane fade activity-content <%= array_of_classes[1][2] %>" id="listening" role="tabpanel" aria-labelledby="listening-tab">
+
+    <%= render partial: "activity", locals: { path: new_listening_path, sections: @sections, activities: @listenings, model: ListeningEnrollment, id: :listening_id, url: update_listening_enrollments_path } %>
+
+  </div>
+
+  <div class="tab-pane fade activity-content <%= array_of_classes[1][3] %>" id="reading" role="tabpanel" aria-labelledby="reading-tab">
+
+    <%= render partial: "activity", locals: { path: new_reading_path, sections: @sections, activities: @readings, model: ReadingEnrollment, id: :reading_id, url: update_reading_enrollments_path } %>
+
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+<%= render 'navbar' %>
+
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Speaking Activities</h1>
+<br>
+
+<%= link_to "Create New Activity", new_speaking_path, class: "btn btn-warning" %>
+
+<% @sections.each do |section| %>
+  <h3><%= section.name %></h3>
+  <table>
+    <tr>
+      <th>Activities</th>
+      <% section.students.alphabetically.each do |student| %>
+        <th><%= student.name.slice(0..9) %></th>
+      <% end %>
+    </tr>
+
+
+    <% @speakings.each do |speaking| %>
+      <tr>
+        <td>
+          <%= form_for(speaking) do |f| %>
+            <%= f.text_field :title %>
+          <% end %>
+        </td>
+          <% section.students.alphabetically.each do |student| %>
+            <td>
+              <% speaking_enrollment = SpeakingEnrollment.where(student_id: student.id, speaking_id: speaking.id).first %>
+                <%= form_for speaking_enrollment, url: update_speaking_enrollments_path, remote: true do |f| %>
+                  <%= f.text_field :marks, class: "marks" %>
+                  <%= f.hidden_field :id %>
+                <% end %>
+              </td>
+          <% end %>
+      </tr>
+    <% end %>
+
+  </table>
+  <br>
+<% end %>

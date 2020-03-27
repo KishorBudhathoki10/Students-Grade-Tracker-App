@@ -1,55 +1,59 @@
 <%= form_for(student) do |f| %>
-  <% if student.errors.any? %>
+  <% if params[:messages] %>
     <div id="error_explanation">
-      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+      <h2><%= pluralize(params[:messages].count, "error") %> prohibited this student from being saved:</h2>
 
       <ul>
-      <% student.errors.full_messages.each do |message| %>
+      <% params[:messages].each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :family_history %>
-    <%= f.text_area :family_history %>
+    <%= f.text_area :family_history, class: "form-control", rows: 10 %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :strengths %>
-    <%= f.text_area :strengths %>
+    <%= f.text_area :strengths, class: "form-control", rows: 10 %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :weaknesses %>
-    <%= f.text_area :weaknesses %>
+    <%= f.text_area :weaknesses, class: "form-control", rows: 10 %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :disabilities %>
-    <%= f.text_area :disabilities %>
+    <%= f.text_area :disabilities, class: "form-control", rows: 5 %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
+    <%= f.file_field :profile_image %>
+  </div>
+
+  <div class="form-group">
     <%= f.hidden_field :section_id, value: @section_id %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.hidden_field :grade_id, value: @grade_id %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit "Save", class: "btn btn-warning btn-lg btn-block" %>
   </div>
 <% end %>

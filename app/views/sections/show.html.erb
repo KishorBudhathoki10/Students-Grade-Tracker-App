@@ -1,16 +1,29 @@
+<%= render "navbar" %>
+
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<%= link_to("<< Back To Grade", grade_path(@grade_id) ) %>
+<%= link_to "<< Back", grade_path(@grade_id), class: "btn btn-info btn-sm" %>
 
-<h2><%= @section.name %></h2>
+<div class="main-show">
+  <header>
+    <h2><%= @section.name %></h2>
+  </header>
 
-<%= link_to('Create New Student', "/grades/#{@grade_id}/sections/#{@id}/students/new") %>
+  <%= link_to 'Create New Student', new_student_path(grade_id: @grade_id, id: @id), class: "btn btn-warning white" %>
 
+  <div class="students">
+    <% @students.each do |student| %><!--
+    --><div class="card">
+        <a href="<%= student_show_path(grade_id: @grade_id, id: @id, student_id: student.id) %>">
+          <%= image_tag(student.profile_image, class: "card-img-top", alt: "class img") %>
+        </a>
 
-<h4>Students:</h4>
-
-<% @students.each do |student| %>
-  <p><%= link_to(student.name, "/grades/#{@grade_id}/sections/#{@id}/students/#{student.id}") %></p>
-<% end %>
+        <div class="card-body">
+          <%= link_to student.name, student_show_path(grade_id: @grade_id, id: @id, student_id: student.id), class: "card-text" %>
+        </div>
+      </div><!--
+    --><% end %>
+  </div>
+</div>

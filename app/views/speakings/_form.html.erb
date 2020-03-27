@@ -1,0 +1,26 @@
+<%= form_for(speaking) do |f| %>
+  <% if params[:messages] %>
+    <div id="error_explanation">
+      <h2><%= pluralize(params[:messages].count, "error") %> prohibited this speaking from being saved:</h2>
+
+      <ul>
+      <% params[:messages].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.hidden_field :grade_id, value: @grade_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Save", class: "btn btn-warning btn-lg btn-block" %>
+  </div>
+<% end %>

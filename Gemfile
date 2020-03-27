@@ -53,3 +53,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'bootstrap', '~> 4.4.1'
+gem 'execjs', '~> 2.7'
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+gem 'carrierwave-aws', '~> 1.4'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'

@@ -6,20 +6,22 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<div class="main">
-  <% @grades.each do |grade| %><!--
-    --><div class="card">
-      <%= image_tag("form_background.jpg", class: "card-img-top", alt: "class img") %>
-      <div class="card-body">
-        <%= link_to grade.name, grade, class: 'card-text' %>
-      </div>
-    </div><!--
-  --><% end %>
+<%= link_to 'Create New Grade', new_grade_path , class: "btn btn-warning"%> <br>
 
-</div>
+<% if !@grades.empty? %>
+  <div class="main-grades-index">
+    <% @grades.each do |grade| %><!--
+      --><div class="card">
+        <a href="<%= grade_path(grade.id) %>">
+          <%= image_tag("form_background.jpg", class: "card-img-top", alt: "class img") %>
+        </a>
 
+        <div class="card-body">
+          <%= link_to grade.name, grade, class: 'card-text' %>
+        </div>
+      </div><!--
+    --><% end %>
+  </div>
+<% end %>
 
-<br>
-
-<%= link_to 'Create New Grade', new_grade_path , class: "btn btn-warning"%>
 

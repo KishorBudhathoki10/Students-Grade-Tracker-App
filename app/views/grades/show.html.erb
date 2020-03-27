@@ -1,16 +1,30 @@
-<%= render "navbar.html" %>
+<%= render "navbar" %>
 
-<h1><%= @grade.name %></h1>
+<div class="main-show">
+  <header>
+    <h2><%= @grade.name.upcase %></h2>
+  </header>
 
-<%= link_to 'All Grades', grades_path, class: "badge badge-pill badge-dark" %>
-
-<p id="notice"><%= notice %></p>
-
-<ol>
-  <% @sections.each do |section| %>
-    <li><%= link_to(section.name, "/grades/#{@grade.id}/sections/#{section.id}" ) %></li>
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
   <% end %>
-</ol>
 
-<%= link_to 'Edit', edit_grade_path(@grade) %> |
-<%= link_to 'Destroy', @grade, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "View All Activities", grade_activities_path(@grade.id), class: "btn btn-warning white" %>
+
+  <div class="sections">
+    <% @sections.each do |section| %><!--
+    --><div class="card">
+        <a href="<%= section_path(grade_id: @grade.id, id: section.id) %>">
+          <%= image_tag("form_background.jpg", class: "card-img-top", alt: "class img") %>
+        </a>
+
+        <div class="card-body">
+          <%= link_to(section.name, section_path(grade_id: @grade.id, id: section.id), class: "card-text" ) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_grade_path(@grade), class: "btn btn-secondary" %><br>
+<%= link_to 'Destroy', @grade, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

@@ -1,0 +1,9 @@
+<%= render "navbar" %>
+
+<%= link_to 'Back', "/grades/#{@grade_id}/activities", class: "btn btn-info btn-sm" %>
+
+<div class="form">
+  <h1>Editing Listening</h1>
+
+  <%= render 'form', listening: @listening %>
+</div>
