@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  
   root 'grades#index'
+
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
   resources :students, except: [:index, :new, :edit, :show]
 
@@ -40,7 +41,6 @@ Rails.application.routes.draw do
   get "/grades/:grade_id/reading/new", to: "readings#new", as: "new_reading"
 
   patch "/grades/:grade_id/readings", to: "readings#update_reading_enrollments", as: "update_reading_enrollments"
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

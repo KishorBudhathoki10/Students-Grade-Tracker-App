@@ -20,4 +20,20 @@ module GradesHelper
     arr
   end
 
+  def set_section_image(section)
+    if section.thumb_image?
+      section.thumb_image
+    else
+      "https://cdn.pixabay.com/photo/2019/03/05/01/59/people-4035403_1280.png"
+    end
+  end
+
+  def set_grade_image(grade)
+    if grade.thumb_image?
+      grade.thumb_image
+    else
+      "https://cdn.pixabay.com/photo/2019/03/05/01/59/people-4035403_1280.png"
+    end
+  end
+
 end

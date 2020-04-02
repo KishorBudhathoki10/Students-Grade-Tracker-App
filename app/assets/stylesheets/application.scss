@@ -31,6 +31,10 @@ header {
 	margin-bottom: 20px;
 }
 
+.grades-header {
+    margin-top: 60px;
+}
+
 .card:hover {
 	transform: scale(1.1);
 }
@@ -51,6 +55,11 @@ header {
 	text-align: center;
 	width: 22%;
 	margin: 1.5%;
+}
+
+.main-grades-index .card img {
+	height: 200px;
+	object-fit: cover;
 }
 
 

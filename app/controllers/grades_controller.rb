@@ -1,6 +1,8 @@
 class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
+  access all: [:index], site_admin: :all
+
   def index
     @grades = Grade.sorted
   end
@@ -71,6 +73,8 @@ class GradesController < ApplicationController
     end
 
     def grade_params
-      params.require(:grade).permit(:name, sections_attributes: [:id, :name, :_destroy])
+      params.require(:grade).permit(:name,
+                                    :thumb_image,
+                                    sections_attributes: [:id, :name, :thumb_image, :_destroy])
     end
 end

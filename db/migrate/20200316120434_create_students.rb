@@ -2,6 +2,7 @@ class CreateStudents < ActiveRecord::Migration[5.0]
   def change
     create_table :students do |t|
       t.string     :name
+      t.integer    :age
       t.text       :family_history
       t.text       :strengths
       t.text       :weaknesses

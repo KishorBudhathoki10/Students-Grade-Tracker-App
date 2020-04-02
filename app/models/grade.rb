@@ -12,6 +12,8 @@ class Grade < ApplicationRecord
 
   validates_presence_of :name
 
+  mount_uploader :thumb_image, GradeUploader
+
   scope :sorted, lambda { order("id ASC") }
 
 end

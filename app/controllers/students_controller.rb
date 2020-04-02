@@ -2,6 +2,8 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit]
   before_action :set_student_id_section_id_grade_id, only: [:destroy, :update]
 
+  access all: [], site_admin: :all
+
   def show
     @id = params[:id]
     @student_id = params[:student_id]

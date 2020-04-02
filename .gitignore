@@ -18,4 +18,5 @@
 
 # I dont want to share my secrets
 /config/secrets.yml
+/config/environment.rb
 .env

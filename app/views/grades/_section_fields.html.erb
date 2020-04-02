@@ -2,6 +2,11 @@
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
-    <%= link_to_remove_association "Remove Class", f, class: "btn btn-danger" %>
   </div>
+
+  <div>
+    <%= f.file_field :thumb_image %>
+  </div>
+
+  <%= link_to_remove_association "Remove Class", f, class: "btn btn-danger" %>
 </div>

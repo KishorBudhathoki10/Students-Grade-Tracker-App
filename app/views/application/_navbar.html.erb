@@ -15,11 +15,24 @@
       <li>
         <%= link_to "Escola Fructuós Gelabert", "https://agora.xtec.cat/ceipfg/" , class: "nav-link" %>
       </li>
+
+      <% if current_user %>
+        <li>
+          <%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "nav-link" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
+
+        <li>
+          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <% if current_user %>
+      <%= link_to current_user.first_name, root_path, class: "btn btn-outline-success my-2 my-sm-0" %>
+    <% end %>
   </div>
 </nav>

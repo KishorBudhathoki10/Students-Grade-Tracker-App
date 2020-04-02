@@ -1,10 +1,6 @@
-<header class="grades">
+<header class="grades-header">
   <h1>SCHOOL YEARS</h1>
 </header>
-
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
 
 <%= link_to 'Create New Grade', new_grade_path , class: "btn btn-warning"%> <br>
 
@@ -13,7 +9,7 @@
     <% @grades.each do |grade| %><!--
       --><div class="card">
         <a href="<%= grade_path(grade.id) %>">
-          <%= image_tag("form_background.jpg", class: "card-img-top", alt: "class img") %>
+          <%= image_tag(set_grade_image(grade), class: "card-img-top", alt: "class img") %>
         </a>
 
         <div class="card-body">
@@ -23,5 +19,3 @@
     --><% end %>
   </div>
 <% end %>
-
-

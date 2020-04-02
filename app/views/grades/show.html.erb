@@ -1,13 +1,7 @@
-<%= render "navbar" %>
-
 <div class="main-show">
   <header>
     <h2><%= @grade.name.upcase %></h2>
   </header>
-
-  <% if notice %>
-    <p id="notice"><%= notice %></p>
-  <% end %>
 
   <%= link_to "View All Activities", grade_activities_path(@grade.id), class: "btn btn-warning white" %>
 
@@ -15,7 +9,7 @@
     <% @sections.each do |section| %><!--
     --><div class="card">
         <a href="<%= section_path(grade_id: @grade.id, id: section.id) %>">
-          <%= image_tag("form_background.jpg", class: "card-img-top", alt: "class img") %>
+          <%= image_tag(set_section_image(section), class: "card-img-top", alt: "class img") %>
         </a>
 
         <div class="card-body">
