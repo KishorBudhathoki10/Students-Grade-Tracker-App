@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
+ruby "2.6.3"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
@@ -61,3 +61,4 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+
