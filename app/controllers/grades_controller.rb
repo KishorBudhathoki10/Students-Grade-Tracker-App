@@ -1,7 +1,7 @@
 class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
-  access all: [:index], site_admin: :all
+  access all: [], site_admin: :all
 
   def index
     @grades = Grade.sorted

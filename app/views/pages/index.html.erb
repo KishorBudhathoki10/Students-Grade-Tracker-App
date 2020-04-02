@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student's Report Tracker</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= render "navbar" %>
+    
+    <header>
+      <h1>Student's Report Tracker</h1>
+    </header>
+
+    <div class="main">
+      <p>
+        This application is specifically build for <b>Helena Català</b> to track her students activities in English.
+      </p>
+
+      <p>
+        This application will help her collect the personal data of her students as well as collect their grades. Finally she will be able to get a record of the student's activities and progress in each areas of the English Language.
+      </p>
+
+      <p>
+        <em>Note: Only Helena is able to access the data in this website.</em>
+      </p>
+    </div>
+    
+  </body>
+</html>
