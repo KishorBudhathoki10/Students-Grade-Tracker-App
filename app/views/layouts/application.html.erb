@@ -12,9 +12,13 @@
     <%= render "navbar" %>
     
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <div class="message">
+        <p class="notice"><%= notice %></p>
+      </div>
     <% elsif alert %>
-      <p class="alert"><%= alert %></p>
+      <div class="message">
+        <p class="alert message"><%= alert %></p>
+      </div>
     <% end %>
     
     <%= yield %>
