@@ -11,6 +11,16 @@
   <body>
 
     <%= render "navbar" %>
+
+    <% if notice %>
+      <div class="message">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% elsif alert %>
+      <div class="message">
+        <p class="alert message"><%= alert %></p>
+      </div>
+    <% end %>
     
     <header>
       <h1>Student's Report Tracker</h1>
