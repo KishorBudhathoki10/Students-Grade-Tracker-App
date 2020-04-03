@@ -1,7 +1,7 @@
 class ReadingsController < ApplicationController
   before_action :set_reading, only: [:show, :edit, :update, :destroy]
 
-  access all: [], site_admin: :all
+  # access all: [], site_admin: :all
 
   def index
     @readings = Reading.all

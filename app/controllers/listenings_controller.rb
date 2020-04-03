@@ -1,7 +1,7 @@
 class ListeningsController < ApplicationController
   before_action :set_listening, only: [:show, :edit, :update, :destroy]
 
-  access all: [], site_admin: :all 
+  # access all: [], site_admin: :all 
 
   def index
     @listenings = Listening.all
