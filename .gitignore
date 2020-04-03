@@ -19,3 +19,7 @@
 # I dont want to share my secrets
 /config/secrets.yml
 .env
+
+# This is for heroku because of unable to update styles
+
+/public/assets/**
