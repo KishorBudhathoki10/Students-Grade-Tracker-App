@@ -26,15 +26,15 @@
     </p>
 
     <p>
-      <strong>Disabilities:</strong>
+      <strong>Special Needs:</strong>
       <%= @student.disabilities %>
     </p>
   </div>
 
 </div>
 
-<%= link_to 'Edit', edit_student_path(grade_id: @grade_id, id: @id, student_id: @student_id), class: "btn btn-secondary" %>
+<%= link_to "Edit #{@student.name}", edit_student_path(grade_id: @grade_id, id: @id, student_id: @student_id), class: "btn btn-secondary" %>
 
 <br>
 
-<%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+<%= link_to "Delete #{@student.name}", @student, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>

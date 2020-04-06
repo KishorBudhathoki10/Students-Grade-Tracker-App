@@ -22,5 +22,5 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_grade_path(@grade), class: "btn btn-secondary" %><br>
-<%= link_to 'Destroy', @grade, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<%= link_to "Edit #{@grade.name}", edit_grade_path(@grade), class: "btn btn-secondary" %><br>
+<%= link_to "Delete #{@grade.name}", @grade, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
