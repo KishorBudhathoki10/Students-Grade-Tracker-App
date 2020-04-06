@@ -15,9 +15,8 @@ class Student < ApplicationRecord
 
   mount_uploader :profile_image, StudentUploader
 
-  validates_presence_of :name,
-                        :age
-
+  validates_presence_of :name
+  
   scope :sorted, lambda { order('id ASC') }
   scope :alphabetically, lambda { order('name ASC') }
 end
