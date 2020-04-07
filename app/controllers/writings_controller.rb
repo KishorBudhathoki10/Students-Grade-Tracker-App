@@ -1,7 +1,7 @@
 class WritingsController < ApplicationController
   before_action :set_writing, only: [:show, :edit, :update, :destroy]
 
-  # access all: [], site_admin: :all
+  access all: [], site_admin: :all
 
   def index
     @writings = Writing.all

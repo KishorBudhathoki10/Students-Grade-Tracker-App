@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
 
-  # access all: [], site_admin: :all
+  access all: [], site_admin: :all
 
   def show
     @section = Section.find(params[:id])
