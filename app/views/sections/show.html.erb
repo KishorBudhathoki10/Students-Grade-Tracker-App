@@ -7,6 +7,18 @@
 
   <%= link_to 'Create New Student', new_student_path(grade_id: @grade_id, id: @id), class: "btn btn-warning white" %>
 
+
+  <div class="dropdown">
+    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      sort by
+    </button>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <%= link_to "Newest", section_path(sort_by: 'newest'), class: "dropdown-item"  %>
+      <%= link_to "Alphabetical order", section_path(sort_by: "alphabetical"), class: "dropdown-item" %>
+    </div>
+  </div>
+
   <div class="students">
     <% @students.each do |student| %><!--
     --><div class="card">

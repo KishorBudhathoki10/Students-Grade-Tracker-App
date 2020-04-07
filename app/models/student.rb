@@ -18,5 +18,6 @@ class Student < ApplicationRecord
   validates_presence_of :name
   
   scope :sorted, lambda { order('id ASC') }
+  scope :newest_first, lambda { order('created_at DESC') }
   scope :alphabetically, lambda { order('name ASC') }
 end

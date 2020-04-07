@@ -4,8 +4,18 @@ class SectionsController < ApplicationController
 
   def show
     @section = Section.find(params[:id])
-    @students = @section.students.alphabetically
+    @students = order_students(params[:sort_by], @section.students)
     @id = @section.id
     @grade_id = params[:grade_id]
+  end
+
+  private
+
+  def order_students(order, students)
+    if order == "newest"
+      students.newest_first
+    else
+      students.alphabetically
+    end
   end
 end
