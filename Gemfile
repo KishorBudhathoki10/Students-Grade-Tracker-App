@@ -59,6 +59,6 @@ gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'carrierwave-aws', '~> 1.4'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
-gem 'omniauth', '~> 1.9', '>= 1.9.1'
+gem 'omniauth', '~> 1.9'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
